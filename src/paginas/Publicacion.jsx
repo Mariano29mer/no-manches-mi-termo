@@ -31,35 +31,46 @@ function Publicacion() {
 
     return(
         <main className="formulario">
-            <form onSubmit={enviarFormulario}>
-                <label>Nombre del Objeto</label>
-                <input type="text" value={objeto} onChange={(e) => setObjeto(e.target.value)} />
-                <label>Ubicación</label>
+            <form className="campos" onSubmit={enviarFormulario}>
+                <div className="campo">
+                    <label className="campo-titulo">Nombre del Objeto</label>
+                    <input className="campo-input" type="text" value={objeto} onChange={(e) => setObjeto(e.target.value)} />
+                </div>
 
-                <input type="text" value={ubicacion} onChange={(e) => setUbicacion(e.target.value)} />
-                <label>Categoría</label>
-                <select value={categoria} onChange={(e) => setCategoria(e.target.value)}>
-                    <option value="">Seleccionar</option>
-                    <option value="accesorios">Accesorio</option>
-                    <option value="libro">Cuaderno/libro</option>
-                    <option value="termo">Termo</option>
-                    <option value="electronica">Electrónica</option>
-                </select>
-                <label>Descripción</label>
+                <div className="campo">
+                    <label className="campo-titulo">Ubicación</label>
+                    <input className="campo-input" type="text" value={ubicacion} onChange={(e) => setUbicacion(e.target.value)} />
+                </div>
 
-                <input type="text" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} />
-                <label>Contacto</label>
-                
-                <input type="text" value={contacto} onChange={(e) => setContacto(e.target.value)} />
+                <div className="campo">
+                    <label className="campo-titulo">Categoría</label>
+                    <select className="campo-select" value={categoria} onChange={(e) => setCategoria(e.target.value)}>
+                        <option value="">Seleccionar</option>
+                        <option value="accesorios">Accesorios</option>
+                        <option value="libro">Cuaderno/libro</option>
+                        <option value="termo">Termo</option>
+                        <option value="electronica">Electrónica</option>
+                    </select>
+                </div>
 
+                <div className="campo">
+                    <label className="campo-titulo">Descripción</label>
+                    <input className="campo-input" type="text" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} />
+                </div>
 
-                <label>Subir foto</label>
-                <input type="file" accept="image/*" onChange={(e) => setFoto(e.target.value)} />
-                <button type="submit">Publicar la publicacion</button>
+                <div className="campo">
+                    <label className="campo-titulo">Contacto</label>
+                    <input className="campo-input" type="text" value={contacto} onChange={(e) => setContacto(e.target.value)} />
+                </div>
+
+                <div className="campo">
+                    <label className="campo-titulo">Subir foto</label>
+                    <input className="input-foto" type="file" accept="image/*" onChange={(e) => setFoto(e.target.value)} />
+                </div>
+
+                <button className="boton boton-azul" type="submit">Publicar la publicacion</button>
             </form>
         </main>
     )
-
 }
-
 export default Publicacion;
