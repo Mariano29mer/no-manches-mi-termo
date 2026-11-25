@@ -1,3 +1,4 @@
+
 import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
@@ -5,7 +6,7 @@ function Header() {
     const ubicacion = useLocation();
 
     return (
-        <header className="body">
+        <header className=''>
             <div>
                 <h1>No manches mi termo</h1>
             </div>
